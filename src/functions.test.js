@@ -91,12 +91,18 @@
   */
 
 // ... split on space, sort on length, return the last one
- const findLongestWord = (str) => {
-   let longestWord = str.split(' ').reduce(function (longest, currentWord) {
-     return currentWord.length > longest.length ? currentWord : longest
-   }, '')
-   console.log(longestWord)
-   return longestWord
+ const findLongestWord = (string) => {
+   let splitWord = string.split(' ')
+   let longestWord = 0
+   let word = null
+   for (let i = 0; i < splitWord.length; i++) {
+     if (longestWord < splitWord[i].length) {
+       longestWord = splitWord[i].length
+       word = splitWord[i]
+       console.log(word)
+     }
+   }
+   return word
  }
 
 /**
