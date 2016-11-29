@@ -91,18 +91,27 @@
   */
 
 // ... split on space, sort on length, return the last one
+ // const findLongestWord = (string) => {
+ //   let splitWord = string.split(' ')
+ //   let longestWord = 0
+ //   let word = null
+ //   for (let i = 0; i < splitWord.length; i++) {
+ //     if (longestWord < splitWord[i].length) {
+ //       longestWord = splitWord[i].length
+ //       word = splitWord[i]
+ //       console.log(word)
+ //     }
+ //   }
+ //   return word
+ // }
+
  const findLongestWord = (string) => {
-   let splitWord = string.split(' ')
-   let longestWord = 0
-   let word = null
-   for (let i = 0; i < splitWord.length; i++) {
-     if (longestWord < splitWord[i].length) {
-       longestWord = splitWord[i].length
-       word = splitWord[i]
-       console.log(word)
-     }
+   const longestWord = string.split(' ').sort(
+   (a, b) => {
+     return b.length - a.length
    }
-   return word
+  )
+   return longestWord[0]
  }
 
 /**
